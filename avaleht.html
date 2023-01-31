@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <title>Avaleht</title>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style_avaleht.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link
+        rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap">
+</head>
+<body>
+	<div>
+		<p class="motivatsioon">"<span id="lause">Tere tulemast meie veebilehele! Loodame, et see aitab sul asju paremini tehtud saada</span>"</p>
+	</div>
+	
+	
+	<div class="container">
+
+		<div class="column">
+			<form id="task_form" class="todo">
+				<label class="tasks" for="task_name">Tegevuse nimi: </label>
+				<input class="tulbad" type="text" id="task_name" name="task_name"><br><br>
+				<label class="tasks" for="task_date">Tähtaeg: </label>
+				<input class="tulbad" type="date" id="task_date" name="task_date"><br><br>
+				<label class="tasks" for="task_cat">Kategooria: </label>
+				<select  class="tasks" id="task_cat" name="task_cat"> 
+					<option value="Kool">Kool</option>
+					<option value="Tervis">Tervis</option>
+					<option value="Töö">Töö</option>
+					<option value="Muu">Muu</option>
+				</select>  <br><br>
+				<label class="tasks" for="task_desc">Tegevuse kirjeldus: </label>
+				<input class="tulbad" type="text" id="task_desc" name="task_desc"><br><br>
+				<button class="lisa" type="button" onclick="submit_form()">Lisa tegevus</button><br><br>
+			</form>
+			<br><br>
+			<button class="nupud" onclick="window.location.href='lisa_1.html'">Kuidas õppida</button><br><br>
+			<button class="nupud" onclick="window.location.href='lisa_2.html'">Loomanurk</button>
+		</div>
+
+		<div class="column">
+			<table id="data_table">
+				<tr>
+					<th>Nimi</th>
+					<th>Tähtaeg</th>
+					<th>Kategooria</th>
+					<th>Kirjeldus</th>
+				</tr>
+			</table>
+		</div>
+	
+		<div class="kalender">
+			<div class="kuud">
+			<i class="fas fa-angle-left prev"></i>
+			<div class="kuupaev">
+				<h1>Kuu</h1>
+				<p>Kuupäev</p>
+			</div>
+			<i class="fas fa-angle-right next"></i>
+			</div>
+			<div class="nadalapaevad">
+			<div>Esm</div>
+			<div>Teis</div>
+			<div>Kol</div>
+			<div>Nel</div>
+			<div>Ree</div>
+			<div>Laup</div>
+			<div>Pyh</div>
+			</div>
+			<div class="paevade_numbrid"></div>
+		</div>
+
+	</div>
+
+
+	<script src="script_avaleht.js"></script>
+</body>
+</html>
+    

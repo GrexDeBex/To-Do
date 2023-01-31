@@ -1,0 +1,22 @@
+* {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather", serif;
+    background-color: blanchedalmond;
+}
+
+html {
+    font-size: 64%;
+}
+
+.nupud {
+		background-color: rgb(241, 209, 159);
+		color: black;
+		padding: 10px;
+		font-size: 20px;
+		cursor: pointer;
+		border-radius: 12px;
+		font-weight: bold;
+}
