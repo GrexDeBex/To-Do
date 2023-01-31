@@ -5,9 +5,8 @@ function submit_form() {										// Kirjutanud Gregor - Võtab sisestatud andme
 	let name = task_form.elements["task_name"].value;
 	let date = task_form.elements["task_date"].value;
 	let cat = task_form.elements["task_cat"].value;
-	let desc = task_form.elements["task_desc"].value;
 
-	let array = [name, date, cat, desc];
+	let array = [name, date, cat];
 
 	not_error = true;
 	for (var key in localStorage){
@@ -24,7 +23,6 @@ function submit_form() {										// Kirjutanud Gregor - Võtab sisestatud andme
 
 		task_form.elements["task_name"].value = ""
 		task_form.elements["task_date"].value = ""
-		task_form.elements["task_desc"].value = ""
 		renderCalendar()
 		location.reload();
 	}
@@ -55,40 +53,13 @@ function add_row(array){										// Kirjutanud Gregor - lisab rea tabelisse
 	let name = array[0]
 	let date = array[1]
 	let cat = array[2]
-	let desc = array[3]
 
 	if (date == null) {	// Kirjutanud Oliver - ei lisa tühja kuupäeva tabelisse
 	}
 	else {				// Kirjutanud Gregor
-		table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+name+"</td><td>"+date+"</td><td>"+cat+"</td><td>"+desc+"</td><td><input type='button' value='Eemalda' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+		table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+name+"</td><td>"+date+"</td><td>"+cat+"</td><td><input type='button' value='Eemalda' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
 	}
 }
-
-(function(){													// Kirjutanud Markus - kuvab lehe alguses erinevaid motivatsiooni tsitaate
-    var tekst = [
-        "Sinu elu on sinu vastutus",
-        "Anna oma parim, sellest piisab!",
-        "Su vanemad ei kasvatanud sind 18 aastat, et sa oleksid lihtsalt pettumus",
-        "Kogu julgust ja asu asja kallale :)",
-        "Motivatsiooni pole olemas, võta end lihtsalt kokku",
-        "Mis ei ole kalendris, see ei saa tehtud",
-        "100 aastat tagasi käisid sinuvanused sõjas... kas nad surid, et sa saaks lolli mängida?",
-        "Igaühel on oma rada. Tee seda, mis sulle rõõmu tekitab :p",
-        "Sa tead, mida sa tegelikult tegema pead. Mida sa passid? TEE SEDA!!",
-        "Inimesed ei hinda sind sõnade, vaid tegude järgi",
-        "Kas sa oled üldse oma eluga midagi saavutanud? Kas sa isegi üritad?",
-        "Pane ülesanded paberile ja hakka neid maha tõmbama :)",
-        "Kui sa tahad näha, kuidas läbikukkumine välja näeb, siis vaata peeglisse",
-        "Võitmine pole oluline :) tähtis on, et sa üritasid",
-        "Vabanda tuleviku enda ees!! Kui ta seda isegi väärt on..."
-    ],
-    i=0;
-    setInterval(function(){
-        $('#lause').fadeOut(function(){
-            $(this).html(tekst[(i=(i+1)% tekst.length)]).fadeIn();
-        });
-    }, 6000)
-})(); 
 
 //=====================================================================================================================================================
 
@@ -124,20 +95,7 @@ const renderCalendar = () => {
 
   const nextDays = 7 - viimase_p_index - 1;
 
-  const kuud = [
-    "Jaanuar",
-    "Veebruar",
-    "Märts",
-    "Aprill",
-    "Mai",
-    "Juuni",
-    "Juuli",
-    "August",
-    "September",
-    "Oktoober",
-    "November",
-    "Detsember",
-  ];
+  const kuud = ["Jaanuar","Veebruar","Märts","Aprill","Mai","Juuni","Juuli","August","September","Oktoober","November","Detsember",];
 
   document.querySelector(".kuupaev h1").innerHTML = kuud[date.getMonth()];  // Kuvab kalendri päises praeguse kuu
 
@@ -208,3 +166,18 @@ document.querySelector(".next").addEventListener("click", () => {  // vajutusel 
 
 
 renderCalendar();
+
+
+function Disp_Form(){
+	var modal = document.getElementById("task_form");
+	var btn = document.getElementById("display");
+	var span = document.getElementsByClassName("close")[0];
+	
+	btn.onclick = function() {modal.style.display = "block"}
+	span.onclick = function() {modal.style.display = "none"}
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+}

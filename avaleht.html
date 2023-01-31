@@ -14,15 +14,11 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap">
 </head>
 <body>
-	<div>
-		<p class="motivatsioon">"<span id="lause">Tere tulemast meie veebilehele! Loodame, et see aitab sul asju paremini tehtud saada</span>"</p>
-	</div>
-	
-	
 	<div class="container">
-
 		<div class="column">
+			<button id="display" class="display" type="button" onclick="Disp_Form()">Kuva</button><br><br>
 			<form id="task_form" class="todo">
+				<span class="close">&times;</span>
 				<label class="tasks" for="task_name">Tegevuse nimi: </label>
 				<input class="tulbad" type="text" id="task_name" name="task_name"><br><br>
 				<label class="tasks" for="task_date">Tähtaeg: </label>
@@ -34,13 +30,8 @@
 					<option value="Töö">Töö</option>
 					<option value="Muu">Muu</option>
 				</select>  <br><br>
-				<label class="tasks" for="task_desc">Tegevuse kirjeldus: </label>
-				<input class="tulbad" type="text" id="task_desc" name="task_desc"><br><br>
 				<button class="lisa" type="button" onclick="submit_form()">Lisa tegevus</button><br><br>
 			</form>
-			<br><br>
-			<button class="nupud" onclick="window.location.href='lisa_1.html'">Kuidas õppida</button><br><br>
-			<button class="nupud" onclick="window.location.href='lisa_2.html'">Loomanurk</button>
 		</div>
 
 		<div class="column">
@@ -49,7 +40,6 @@
 					<th>Nimi</th>
 					<th>Tähtaeg</th>
 					<th>Kategooria</th>
-					<th>Kirjeldus</th>
 				</tr>
 			</table>
 		</div>
